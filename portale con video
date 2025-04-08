@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <style>
+      #testa {
+        background-color: red;
+        height: 200px;
+      }
+      #piede {
+        height: 200px;
+        background-color: orange;
+        clear: both;
+      }
+      #c1 {
+        float: left;
+        height: 500px;
+        background-color: blue;
+        width: 15%;
+      }
+
+      #c2 {
+        background-color: green;
+        height: 500px;
+        float: left;
+        width: 70%;
+      }
+
+      #c3 {
+        float: right;
+        height: 500px;
+        background-color: purple;
+        width: 15%;
+        
+   
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center"><font color="red"> Portale </font></h1>
+    <hr>
+    <div id="testa"></div>
+    <div id="c1"></div>
+    <div id="c2"><iframe width="560" height="315" src="https://www.youtube.com/embed/G3e-cpL7ofc?si=LkgOLcMWcFx7e84Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <div id="c3"></div>
+    <div id="piede"></div>
+  </body>
+</html>
+Area degli allegati
