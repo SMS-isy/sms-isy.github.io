@@ -1,37 +1,52 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <title>Bootstrap prova</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 <body>
-   <h1 class="text-danger">prova</h1class>
-    <div class="container px-4 text-center border border-5 text-warning">
-        <div class="row gx-5">
-          <div class="col">
-           <div class="p-3">Custom column distanza</div>
-          </div>
-          <div class="col">
-            <div class="p-3">Custom column distanza</div>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex flex-column mb-3 text-primary">
-        <div class="p-2">Flex item 1</div>
-        <div class="p-2">Flex item 2</div>
-        <div class="p-2">Flex item 3</div>
-      </div>
-      <div class="d-flex flex-column-reverse text text-success">
-        <div class="p-2">Flex item 1</div>
-        <div class="p-2">Flex item 2</div>
-        <div class="p-2">Flex item 3</div>
-      </div>
-      <div class="bg-info clearfix">
-        <button type="button" class="btn btn-secondary float-start">Example Button floated left</button>
-        <button type="button" class="btn btn-secondary float-end">Example Button floated right</button>
-      </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+<div class="container-fluid p-5 bg-danger text-white text-center">
+  <h1>Bootstrap</h1>
+  <p>Prova bootstrap</p> 
+</div>
+  
+<div class="container mt-5">
+  <div class="row">
+   
+     <div class="col-12 mb-4">
+      <h3>Colonna 1</h3>
+      <img src="./img/Milan.jpg" class="img-fluid" alt="Milan">
+    <div class="card-body">
+      <h5 class="card-title">Immagine del Milan</h5>
+      <p class="card-text">Inserisci una didascalia per questa immagine:</p>
+      <input type="text" id="captionInput" class="form-control" placeholder="Scrivi qui...">
+      <p id="captionOutput" class="figure-caption-output"></p>
+    </div>
+  </div>
+    <div class="col-12 mb-4">
+      <h3>Colonna 2</h3>
+      <img src="./img/Inter.png" class="img-fluid" alt="Inter">
+    <div class="card-body">
+      <h5 class="card-title">Immagine dell'Inter</h5>
+      <p class="card-text">Inserisci una didascalia per questa immagine:</p>
+      <input type="text" id="captionInput" class="form-control" placeholder="Scrivi qui...">
+      <p id="captionOutput" class="figure-caption-output"></p>
+    </div>
+  </div>
+  <div class="col-12 mb-4">
+      <h3>Colonna 3</h3>
+      <img src="./img/juve.jpeg" class="img-fluid" alt="Juve">
+    <div class="card-body">
+      <h5 class="card-title">Immagine della Juve</h5>
+      <p class="card-text">Inserisci una didascalia per questa immagine:</p>
+      <input type="text" id="captionInput" class="form-control" placeholder="Scrivi qui...">
+      <p id="captionOutput" class="figure-caption-output"></p>
+     </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
