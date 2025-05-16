@@ -1,86 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
+    <title>Home</title>
 </head>
-
 <body>
+    <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="Nome">
 
-   <form>
-      <lable for= "nome">nome</lable>
-      <input type="text" id="nome" >
+        <br>
+        <br>
 
-      <lable for= "cognome">cognome</lable>
-      <input type="text" id="cognome" >
+        <label for="Cognome">Cognome</label>
+        <input type="text" id="Cognome">
 
-      <lable for= "data">data</lable>
-      <input type="date" id="data" >
+        <br>
+        <br>
 
-      <lable for= "email">email</lable>
-      <input type="email" id="nome" >
+        <label for="data-di-nascita">Data</label>
+        <input type="date" id="data-di-nascita">
 
-      <label for= "password">password</lable>
-      <input type="password" id="password" >
-      <br>
-      <label for="regioni">seleziona regione</label>
-      <select name="regioni"id="regioni">
-        <option value="molise">molise</option>
-        <option value="sardegna">sardegna</option>
-        <option value="calabria">calabria</option>
-        <option value="sicilia">sicilia</option>
-        <option value="puglia">puglia</option>
-        <option value="valle d'aosta">valle d'aosta</option>
-        <option value="lombardia">lombardia</option>
-        <option value="campania">campania</option>
-        <option value="veneto">veneto</option>
-        <option value="marche">marche</option>
-        <option value="friuli">friuli</option>
-        <option value="trentino">trentino</option>
-        <option value="piemonte">piemonte</option>
-        <option value="abruzzo">abruzzo</option>
-        <option value="basilicata">basilicata</option>
-        <option value="lazio">lazio</option>
-        <option value="toscana">toscana</option>
-        <option value="liguria">liguria</option>
-        <option value="emilia romagna">emilia romagna</option>
-      </select>
-     <br>
-     <br>    
-     
-     <p>sesso</p>
-     <input type= "radio" id="maschio" name="sesso"
-     <label for= "maschio">maschio</label>
-     
+        <br>
+        <br>
 
-     <input type= "radio" id= "femmina" name="sesso"
-     <label for ="femmina">femmina</label>
-     <br>
-     <br>
-     <lable for="nota" >nota</lable>
-     <textarea name= "nota" id="nota" cols="20" rows="5"></textarea>
-     <br>  
+        <label for="Email">Email</label>
+        <input type="Email" for="Email">
 
-     <br>
-     <leble for="foto" >invio foto</lable>
-     <input type="file" name="foto" id="foto"> 
-     <br>
-     <input type="checkbox" id="termini">
-     <label for="termini">accetto i termini di servizio </label>
-     <br>
-     <input type="submit" value="invia"
+        <br>
+        <br>
+        
+        <label for="Password">Password</label>
+        <input type="Password" name="Password">
 
+        <br>
+        <br>
 
+        <label for="Regioni">Seleziona Regione</label>
+        <select name="Regioni" id="Regioni">
+            <option value="Lombardia">Lombardia</option>
+            <option value="Valle-aosta">Valle d'Aosta</option>    
+            <option value="Trentino-Alto-Adige">Trentino Alto-Adige</option>
+            <option value="Emilia-romagna">Emilia-Romagna</option>
+            <option value="Veneto">Veneto</option>
+            <option value="Friuli-venezia-giulia">Friuli-Venezia Giulia</option>
+            <option value="Toscana">Toscana</option>
+            <option value="Umbria">Umbria</option>
+            <option value="Liguria">Liguria</option>
+            <option value="Molise">Molise</option>
+            <option value="Marche">Marche</option>
+            <option value="Basilicata">Basilicata</option>
+            <option value="Lazio">Lazio</option>
+            <option value="Piemonte">Piemonte</option>    
+            <option value="Abruzzo">Abruzzo</option>
+            <option value="Sardegna">Sardegna</option>
+            <option value="Puglia">Puglia</option>
+            <option value="Calabria">Calabria</option>
+            <option value="Sicilia">Sicilia</option>
+            <option value="Campania">Campania</option>
+        </select>
 
+        <br>
+        <br>
+
+        <p>Sesso:</p>
+        <input type="radio" id="maschio" name="Sesso">
+        <label for="Maschio">Maschio</label>
+        
+        <input type="radio" id="Femmina" name="sesso">
+        <label for="Femmina">Femmina</label>
+
+        <br>
+        <br>
+
+        <label for="nota">Aggiungi commento</label>
+        <br>
+        <textarea id="nota"></textarea>
+
+        <br>
+        <br>
+
+        <label for="foto">Invia file</label>
+        <br>
+        <input type="file" id="foto">
+
+        <br>
+        <br>
+
+        <input type="checkbox" id="termini">
+        <label for="termini">Accetto i termini di servizio</label>
+
+        <br>
+        <br>
+
+        <input type="submit" value="iscriviti">
+
+    </form>
 </body>
-
 </html>
-
-
-
-
-
-
-
