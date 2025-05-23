@@ -21,105 +21,123 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     header {
-      background-color: #2980b9;
+      background: rgba(41, 128, 185, 0.85);
       width: 100%;
-      padding: 20px 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 25px 0;
+      box-shadow: 0 8px 20px rgba(41, 128, 185, 0.3);
       position: sticky;
       top: 0;
       z-index: 1000;
       text-align: center;
       color: white;
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
     }
 
     header h1 {
       margin: 0;
-      font-weight: 700;
-      font-size: 2.2rem;
-      letter-spacing: 1px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      font-weight: 800;
+      font-size: 2.6rem;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.2);
     }
 
     header h2 {
-      margin: 5px 0 0;
+      margin: 6px 0 0;
       font-weight: 400;
       font-style: italic;
-      font-size: 1.1rem;
-      opacity: 0.9;
+      font-size: 1.2rem;
+      opacity: 0.85;
+      letter-spacing: 0.06em;
+      text-shadow: 0 0 4px rgba(0,0,0,0.1);
     }
 
     main {
       flex-grow: 1;
       width: 100%;
-      max-width: 600px;
-      background: white;
-      padding: 30px 40px;
-      margin: 30px 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(41, 128, 185, 0.15);
+      max-width: 640px;
+      background: #fff;
+      padding: 40px 50px;
+      margin: 40px 20px;
+      border-radius: 20px;
+      box-shadow: 0 16px 32px rgba(41, 128, 185, 0.12);
       text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    main:hover {
+      box-shadow: 0 20px 48px rgba(41, 128, 185, 0.2);
     }
 
     main h3 {
       color: #2980b9;
-      font-size: 1.6rem;
-      border-bottom: 3px solid #2980b9;
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-      letter-spacing: 0.05em;
+      font-size: 1.8rem;
+      border-bottom: 4px solid #2980b9;
+      padding-bottom: 14px;
+      margin-bottom: 32px;
+      letter-spacing: 0.07em;
     }
 
     ul {
       list-style: none;
       padding: 0;
       margin: 0 auto;
-      max-width: 350px;
+      max-width: 380px;
       text-align: left;
     }
 
     ul li {
-      margin-bottom: 15px;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
     }
 
     a {
       color: #2980b9;
       text-decoration: none;
       font-weight: 600;
-      padding: 10px 15px;
-      border-radius: 8px;
+      padding: 14px 20px;
+      border-radius: 12px;
       display: inline-block;
       width: 100%;
-      transition: all 0.3s ease;
       background: #eaf4fc;
-      box-shadow: 0 2px 5px rgba(41, 128, 185, 0.2);
+      box-shadow: 0 4px 10px rgba(41, 128, 185, 0.25);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none;
     }
 
-    a:hover, a:focus {
-      background-color: #2980b9;
-      color: white;
-      box-shadow: 0 4px 10px rgba(41, 128, 185, 0.5);
+    a:hover,
+    a:focus {
+      background: linear-gradient(135deg, #2980b9, #3a65c1);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(41, 128, 185, 0.6);
       outline: none;
+      transform: translateY(-3px);
     }
 
     footer {
       background-color: #2980b9;
       color: white;
       text-align: center;
-      padding: 15px 0;
-      font-size: 0.9rem;
+      padding: 18px 0;
+      font-size: 0.95rem;
       margin-top: auto;
       width: 100%;
-      box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 -6px 12px rgba(0,0,0,0.12);
+      user-select: none;
+      letter-spacing: 0.03em;
     }
 
     /* Responsive */
-    @media (max-width: 450px) {
+    @media (max-width: 500px) {
       main {
-        margin: 20px 10px;
-        padding: 20px 25px;
+        margin: 25px 15px;
+        padding: 25px 30px;
         max-width: 100%;
       }
       
@@ -128,7 +146,15 @@
       }
 
       header h1 {
-        font-size: 1.8rem;
+        font-size: 2.1rem;
+      }
+
+      main h3 {
+        font-size: 1.5rem;
+      }
+
+      ul li {
+        font-size: 1rem;
       }
     }
   </style>
@@ -158,6 +184,8 @@
     </ul>
   </main>
 
- 
+  <footer>
+    &copy; 2025 Matteo Isidoro &nbsp;&middot;&nbsp; Realizzato con ❤️
+  </footer>
 </body>
 </html>
