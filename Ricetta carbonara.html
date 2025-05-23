@@ -1,89 +1,240 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ricetta</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ricetta Pasta alla Carbonara</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fafafa;
+      color: #333;
+      margin: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      padding: 0 15px 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 2.8rem;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 15px;
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      border: 5px solid #3498db;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 15px 20px;
+      text-align: center;
+      border: 2px solid #2980b9;
+      font-weight: 600;
+      background-color: #eaf2f8;
+    }
+
+    th {
+      background-color: #2980b9;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    hr {
+      border: none;
+      border-top: 3px solid #2980b9;
+      margin: 40px 0 30px 0;
+      width: 60px;
+      margin-left: 0;
+    }
+
+    h2 {
+      color: #34495e;
+      border-left: 6px solid #2980b9;
+      padding-left: 12px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+      margin-bottom: 40px;
+      color: #2c3e50;
+    }
+
+    p {
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+      color: #3a3a3a;
+    }
+
+    /* Form styles */
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #2980b9;
+      outline: none;
+      box-shadow: 0 0 8px rgba(41, 128, 185, 0.4);
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 8px;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+
+    input[type="radio"] {
+      transform: scale(1.2);
+      margin-right: 6px;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      cursor: pointer;
+      font-weight: 500;
+      color: #34495e;
+      margin-right: 20px;
+      vertical-align: middle;
+    }
+
+    input[type="submit"] {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 12px 0;
+      width: 100%;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 30px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1c5985;
+    }
+  </style>
 </head>
 <body>
-    <h1>Pasta alla carbonara</h1>
-    <img src="https://www.pastarmando.it/images/ricette/_large/pasta-armando_carbonara-day_ricetta_pasta-alla-carbonara_una-stella-in-cucina.jpg" alt="pasta-alla-carbonara" width="600" height="400">
-    <table border="5">
-        <br>
-        </br>
-        <tr>
-            <th>Preparazione</th>
-            <th>Difficoltà</th>
-            <th>Prezzo</th>
-        </tr>
-        <tr>
-            <td>15 min</td>
-            <td>Facile</td>
-            <td>Medio</td>
-        </tr>
-    </table>
-    <hr>
-    <h2>Ingredienti</h2>
-    <ul>
-        <li>Mezzemaniche</li>
-        <li>uova</li>
-        <li>Guanciale</li>
-        <li>Grana</li>
-        <li>Pecorino</li>
-        <li>pepe nero</li>
-        
-        
-    </ul>
-    <hr>
-    <h2>Preparazione</h2>
-    <p>
-       Per preparare la pasta alla carbonara, mettete a bollire l'acqua della pasta e salatela. Nel frattempo preparate le uova (solo tuorlo) con pecorino grana e pepe, e cucinate il guanciale . Tagliate grossolanamente il pomodoro ramato. Versate un filo d’olio in una casseruola e fate soffriggere gli spicchi di aglio. Aggiungete i cubetti di peperone. Unite anche il pomodoro, salate e poi aromatizzate con il pepe e le foglie di basilico. Cuocete a fuoco medio-alto per circa 15 minuti mescolando di tanto in tanto. Quando i peperoni saranno cotti, versate la pasta nell'acqua che intanto sarà arrivata a bollore e cuocetela al dente. Intanto versate i peperoni cotti col pomodoro in un contenitore alto, eliminando l'aglio, e frullate tutto con il mixer a immersione. Trasferite la crema ottenuta nella padella in cui avete cotto i peperoni, accendete il fuoco basso, unite un mestolo di acqua di cottura della pasta e poi, una volta cotta al dente, scolate la pasta direttamente nella crema di peperoni. Mantecate il tempo di amalgamare bene la pasta, poi trasferite nei piatti da portata e   
-    </p>
-    <br>
-    <br>
 
-    <label for="Email">Email</label>
-    <input type="Email" for="Email">
+  <h1>Pasta alla carbonara</h1>
+  <img src="https://www.pastarmando.it/images/ricette/_large/pasta-armando_carbonara-day_ricetta_pasta-alla-carbonara_una-stella-in-cucina.jpg" alt="Pasta alla carbonara" width="600" height="400">
 
-    <br>
-    <br>
-        
-    <label for="Password">Password</label>
-    <input type="Password" name="Password">
+  <table>
+    <tr>
+      <th>Preparazione</th>
+      <th>Difficoltà</th>
+      <th>Prezzo</th>
+    </tr>
+    <tr>
+      <td>15 min</td>
+      <td>Facile</td>
+      <td>Medio</td>
+    </tr>
+  </table>
 
-    <br>
-    <br>
-    <input type="checkbox" id="termini">
-    <label for="termini">Acconsento al trattamento dei dati</label>
+  <hr>
 
-    <br>
-    <br>
-  
+  <h2>Ingredienti</h2>
+  <ul>
+    <li>Mezzemaniche</li>
+    <li>Uova</li>
+    <li>Guanciale</li>
+    <li>Grana</li>
+    <li>Pecorino</li>
+    <li>Pepe nero</li>
+  </ul>
 
-    <p>Livello di gradimento:</p>
-    <input type="radio" id="gradimento" name="gradimento">
-    <label for="gradimento">Eccellente</label>
-        
-    <input type="radio" id="gradimento" name="gradimento">
-    <label for="gradimento">Molto buono</label>
-   
-    <input type="radio" id="gradimento" name="gradimento">
-    <label for="gradimento">Buono</label>
-    
-    <input type="radio" id="gradimento" name="gradimento">
-    <label for="gradimento">Sufficiente</label>
+  <hr>
 
-    <input type="radio" id="gradimento" name="gradimento">
-    <label for="gradimento">Scadente</label>
+  <h2>Preparazione</h2>
+  <p>
+    Per preparare la pasta alla carbonara, mettete a bollire l'acqua della pasta e salatela. Nel frattempo preparate le uova (solo tuorlo) con pecorino grana e pepe, e cucinate il guanciale. Tagliate grossolanamente il pomodoro ramato. Versate un filo d’olio in una casseruola e fate soffriggere gli spicchi di aglio. Aggiungete i cubetti di peperone. Unite anche il pomodoro, salate e poi aromatizzate con il pepe e le foglie di basilico. Cuocete a fuoco medio-alto per circa 15 minuti mescolando di tanto in tanto. Quando i peperoni saranno cotti, versate la pasta nell'acqua che intanto sarà arrivata a bollore e cuocetela al dente. Intanto versate i peperoni cotti col pomodoro in un contenitore alto, eliminando l'aglio, e frullate tutto con il mixer a immersione. Trasferite la crema ottenuta nella padella in cui avete cotto i peperoni, accendete il fuoco basso, unite un mestolo di acqua di cottura della pasta e poi, una volta cotta al dente, scolate la pasta direttamente nella crema di peperoni. Mantecate il tempo di amalgamare bene la pasta, poi trasferite nei piatti da portata e ...
+  </p>
 
-    <br>
-    <br>
+  <form>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required />
+    </div>
 
-    <br>
-    <br>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Inserisci la password" required />
+    </div>
 
-    <input type="submit" value="invia">
+    <div class="form-group checkbox-group">
+      <input type="checkbox" id="termini" name="termini" required />
+      <label for="termini">Acconsento al trattamento dei dati</label>
+    </div>
 
-   
+    <div class="form-group">
+      <p>Livello di gradimento:</p>
+      <input type="radio" id="eccellente" name="gradimento" value="eccellente" required />
+      <label for="eccellente">Eccellente</label>
+
+      <input type="radio" id="molto-buono" name="gradimento" value="molto-buono" />
+      <label for="molto-buono">Molto buono</label>
+
+      <input type="radio" id="buono" name="gradimento" value="buono" />
+      <label for="buono">Buono</label>
+
+      <input type="radio" id="sufficiente" name="gradimento" value="sufficiente" />
+      <label for="sufficiente">Sufficiente</label>
+
+      <input type="radio" id="scadente" name="gradimento" value="scadente" />
+      <label for="scadente">Scadente</label>
+    </div>
+
+    <input type="submit" value="Invia" />
+  </form>
+
 </body>
 </html>
