@@ -1,99 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Improved Dropdown Nav</title>
   <style>
     * {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f0f2ff;
     }
 
     nav {
       position: fixed;
-      width: 100%;
       top: 0;
       left: 0;
       right: 0;
-      padding: 12px;
       background-color: rgb(102, 0, 255);
+      padding: 12px 24px;
+      box-shadow: 0 4px 8px rgba(102, 0, 255, 0.4);
+      z-index: 1000;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
     }
 
     button {
-      padding: 12px;
+      padding: 12px 20px;
       border-radius: 12px;
       border: none;
       cursor: pointer;
       background-color: #fff;
-      color: #000;
+      color: rgb(102, 0, 255);
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(102, 0, 255, 0.3);
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
     }
 
-button:hover {
-      background-color: #e8e8e8;
+    button:hover,
+    button:focus {
+      background-color: #e1dcff;
+      color: rgb(60, 0, 150);
+      box-shadow: 0 6px 14px rgba(60, 0, 150, 0.5);
+      outline: none;
     }
 
     #dropdown {
       position: absolute;
-      display: none;
-      top: 100%;
-      left: 0;
-      right: 0;
+      top: calc(100% + 8px);
+      left: 24px;
       background-color: rgb(102, 0, 255);
-      padding: 12px;
+      border-radius: 12px;
+      padding: 12px 0;
+      min-width: 160px;
+      box-shadow: 0 10px 20px rgba(102, 0, 255, 0.3);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
     }
 
-    a {
-      color: white;
-      text-decoration: none;
+    #dropdown.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-  #dropdown-content {
+    #dropdown-content {
       display: flex;
       flex-direction: column;
-      padding: 3px;
-      gap: 5px;
+      gap: 8px;
+      padding: 0 16px;
+    }
+
+    #dropdown-content a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    #dropdown-content a:hover,
+    #dropdown-content a:focus {
+      background-color: #b2a0ff;
+      color: rgb(60, 0, 150);
+      outline: none;
     }
   </style>
-
-  <body>
-    <nav>
-      <button>Toggle dropdown</button>
-      <div id="dropdown">
-        <div id="dropdown-content">
-          <a href="#">link 1</a>
-          <a href="#">link 2</a>
-          <a href="#">link 3</a>
-        </div>
+</head>
+<body>
+  <nav>
+    <button aria-haspopup="true" aria-expanded="false" aria-controls="dropdown" id="dropdown-button">
+      Toggle dropdown
+    </button>
+    <div id="dropdown" role="menu" aria-labelledby="dropdown-button" tabindex="-1">
+      <div id="dropdown-content">
+        <a href="#" role="menuitem" tabindex="0">Link 1</a>
+        <a href="#" role="menuitem" tabindex="0">Link 2</a>
+        <a href="#" role="menuitem" tabindex="0">Link 3</a>
       </div>
-    </nav>
-  </body>
+    </div>
+  </nav>
 
   <script>
-    const button = document.querySelector("button");
-    const dropdown = document.querySelector("div");
-    let isVisible = false;
+    const button = document.getElementById("dropdown-button");
+    const dropdown = document.getElementById("dropdown");
+
     button.addEventListener("click", () => {
-      dropdown.style.display = isVisible ? "none" : "block";
-      isVisible = !isVisible;
+      const isVisible = dropdown.classList.toggle("show");
+      button.setAttribute("aria-expanded", isVisible);
+      if (isVisible) {
+        dropdown.focus();
+      }
     });
 
-document.addEventListener("click", (e) => {
-      if (!dropdown.contains(e.target) && !e.target.matches("button")) {
-        dropdown.style.display = "none";
-        isVisible = false;
+    // Close dropdown clicking outside
+    document.addEventListener("click", (e) => {
+      if (!dropdown.contains(e.target) && !button.contains(e.target)) {
+        dropdown.classList.remove("show");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Close dropdown on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && dropdown.classList.contains("show")) {
+        dropdown.classList.remove("show");
+        button.setAttribute("aria-expanded", "false");
+        button.focus();
       }
     });
   </script>
+</body>
 </html>
-
-
-
-
-
-
-
