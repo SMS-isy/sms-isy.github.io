@@ -1,105 +1,165 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sito di Matteo Isidoro</title>
-    <link rel="icon" type="image/x-icon" href="./img/IMG_2355.jpeg" />
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f4f8;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sito di Matteo Isidoro</title>
+  <link rel="icon" type="image/x-icon" href="./img/IMG_2355.jpeg" />
+  <style>
+    /* Reset base */
+    * {
+      box-sizing: border-box;
+    }
 
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 0;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #d7e1ec, #f9fbfd);
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        h2 {
-            color: #34495e;
-            margin-top: 5px;
-            font-weight: normal;
-            font-style: italic;
-        }
+    header {
+      background-color: #2980b9;
+      width: 100%;
+      padding: 20px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+      color: white;
+    }
 
-        h3 {
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-            width: 100%;
-            max-width: 400px;
-        }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            max-width: 400px;
-            width: 100%;
-        }
+    header h2 {
+      margin: 5px 0 0;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
 
-        ul li {
-            margin-bottom: 10px;
-        }
+    main {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 600px;
+      background: white;
+      padding: 30px 40px;
+      margin: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(41, 128, 185, 0.15);
+      text-align: center;
+    }
 
-        a {
-            text-decoration: none;
-            color: #2980b9;
-            font-weight: 600;
-            padding: 8px 12px;
-            display: inline-block;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    main h3 {
+      color: #2980b9;
+      font-size: 1.6rem;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      letter-spacing: 0.05em;
+    }
 
-        a:hover {
-            background-color: #2980b9;
-            color: white;
-        }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 350px;
+      text-align: left;
+    }
 
-        /* Responsive */
-        @media (max-width: 450px) {
-            body {
-                padding: 10px;
-            }
+    ul li {
+      margin-bottom: 15px;
+    }
 
-            ul {
-                max-width: 100%;
-            }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: inline-block;
+      width: 100%;
+      transition: all 0.3s ease;
+      background: #eaf4fc;
+      box-shadow: 0 2px 5px rgba(41, 128, 185, 0.2);
+    }
 
-            h3 {
-                max-width: 100%;
-            }
-        }
-    </style>
+    a:hover, a:focus {
+      background-color: #2980b9;
+      color: white;
+      box-shadow: 0 4px 10px rgba(41, 128, 185, 0.5);
+      outline: none;
+    }
+
+    footer {
+      background-color: #2980b9;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      margin-top: auto;
+      width: 100%;
+      box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 450px) {
+      main {
+        margin: 20px 10px;
+        padding: 20px 25px;
+        max-width: 100%;
+      }
+      
+      ul {
+        max-width: 100%;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
     <h1>Sito di Matteo Isidoro</h1>
     <h2>Ad uso didattico</h2>
+  </header>
 
+  <main>
     <h3>Lavori del corso:</h3>
     <ul>
-        <li><a href="intestazioni.html">Intestazioni</a></li>
-        <li><a href="tabella.html">Tabella voti</a></li>
-        <li><a href="IBSU.html">Formattazione</a></li>
-        <li><a href="LISTE.html">Liste</a></li>
-        <li><a href="paragrafi.html">Paragrafi</a></li>
-        <li><a href="form.html">Form</a></li>
-        <li><a href="Ricetta carbonara.html">Ricetta carbonara</a></li>
-        <li><a href="portale-con-video.html">Portale con video</a></li>
-        <li><a href="immagineCasa.html">Immagine</a></li>
-        <li><a href="Tabella.html">Tabella</a></li>
-        <li><a href="Dropdown.html">Dropdown</a></li>
-        <li><a href="bootstrap.html">Bootstrap</a></li>
-        <li><a href="Modal.html">Modal</a></li>
+      <li><a href="intestazioni.html">Intestazioni</a></li>
+      <li><a href="tabella.html">Tabella voti</a></li>
+      <li><a href="IBSU.html">Formattazione</a></li>
+      <li><a href="LISTE.html">Liste</a></li>
+      <li><a href="paragrafi.html">Paragrafi</a></li>
+      <li><a href="form.html">Form</a></li>
+      <li><a href="Ricetta carbonara.html">Ricetta carbonara</a></li>
+      <li><a href="portale-con-video.html">Portale con video</a></li>
+      <li><a href="immagineCasa.html">Immagine</a></li>
+      <li><a href="Tabella.html">Tabella</a></li>
+      <li><a href="Dropdown.html">Dropdown</a></li>
+      <li><a href="bootstrap.html">Bootstrap</a></li>
+      <li><a href="Modal.html">Modal</a></li>
     </ul>
+  </main>
+
+  <footer>
+    &copy; 2025 Matteo Isidoro - Tutti i diritti riservati
+  </footer>
 </body>
 </html>
