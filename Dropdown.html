@@ -1,183 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Improved Dropdown Nav</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
   <style>
     * {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: linear-gradient(135deg, #e0e4ff, #c0c6ff);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding-top: 80px; /* navbar height + spacing */
     }
 
     nav {
       position: fixed;
+      width: 100%;
       top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(102, 0, 255, 0.75);
-      backdrop-filter: blur(10px);
-      padding: 12px 32px;
-      border-radius: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      width: max-content;
+      left: 0;
+      right: 0;
+      padding: 12px;
+      background-color: rgb(102, 0, 255);
     }
 
     button {
-      padding: 12px 24px;
-      border-radius: 30px;
+      padding: 12px;
+      border-radius: 12px;
       border: none;
       cursor: pointer;
-      background: #fff;
-      color: rgb(102, 0, 255);
-      font-weight: 700;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-     
-     
-      user-select: none;
-      position: relative;
+      background-color: #fff;
+      color: #000;
     }
 
-    button:hover,
-    button:focus {
-      background-color: #e9e2ff;
-      color: rgb(60, 0, 150);
-
-      outline: none;
-    }
-
-    /* Icona freccia */
-    button svg {
-      width: 18px;
-      height: 18px;
-      fill: rgb(102, 0, 255);
-      transition: transform 0.3s ease;
-      transform-origin: center;
-    }
-
-    button[aria-expanded="true"] svg {
-      transform: rotate(180deg);
-      fill: rgb(60, 0, 150);
+button:hover {
+      background-color: #e8e8e8;
     }
 
     #dropdown {
       position: absolute;
-      top: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%) translateY(-15px);
-      background: linear-gradient(135deg, #6e40ff, #4b00d4);
-      border-radius: 20px;
-      padding: 16px 0;
-      min-width: 200px;
-
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      z-index: 1000;
+      display: none;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: rgb(102, 0, 255);
+      padding: 12px;
     }
 
-    #dropdown.show {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateX(-50%) translateY(0);
+    a {
+      color: white;
+      text-decoration: none;
     }
 
-    #dropdown-content {
+    a:hover {
+      text-decoration: underline;
+    }
+
+  #dropdown-content {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      padding: 0 24px;
-    }
-
-    #dropdown-content a {
-      color: #e0dfff;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      background: transparent;
-
-    }
-
-    #dropdown-content a:hover,
-    #dropdown-content a:focus {
-      background: #b6aaff;
-      color: #fff;
-
-      outline: none;
+      padding: 3px;
+      gap: 5px;
     }
   </style>
-</head>
-<body>
-  <nav>
-    <button
-      aria-haspopup="true"
-      aria-expanded="false"
-      aria-controls="dropdown"
-      id="dropdown-button"
-    >
-      Toggle dropdown
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <path d="M5 8l5 5 5-5H5z" />
-      </svg>
-    </button>
-    <div id="dropdown" role="menu" aria-labelledby="dropdown-button" tabindex="-1">
-      <div id="dropdown-content">
-        <a href="#" role="menuitem" tabindex="0">Link 1</a>
-        <a href="#" role="menuitem" tabindex="0">Link 2</a>
-        <a href="#" role="menuitem" tabindex="0">Link 3</a>
+
+  <body>
+    <nav>
+      <button>Toggle dropdown</button>
+      <div id="dropdown">
+        <div id="dropdown-content">
+          <a href="#">link 1</a>
+          <a href="#">link 2</a>
+          <a href="#">link 3</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </body>
 
   <script>
-    const button = document.getElementById("dropdown-button");
-    const dropdown = document.getElementById("dropdown");
-
+    const button = document.querySelector("button");
+    const dropdown = document.querySelector("div");
+    let isVisible = false;
     button.addEventListener("click", () => {
-      const isVisible = dropdown.classList.toggle("show");
-      button.setAttribute("aria-expanded", isVisible);
-      if (isVisible) {
-        dropdown.focus();
-      }
+      dropdown.style.display = isVisible ? "none" : "block";
+      isVisible = !isVisible;
     });
 
-    document.addEventListener("click", (e) => {
-      if (!dropdown.contains(e.target) && !button.contains(e.target)) {
-        dropdown.classList.remove("show");
-        button.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && dropdown.classList.contains("show")) {
-        dropdown.classList.remove("show");
-        button.setAttribute("aria-expanded", "false");
-        button.focus();
+document.addEventListener("click", (e) => {
+      if (!dropdown.contains(e.target) && !e.target.matches("button")) {
+        dropdown.style.display = "none";
+        isVisible = false;
       }
     });
   </script>
-</body>
 </html>
