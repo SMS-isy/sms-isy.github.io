@@ -1,20 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elenchi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elenchi Stilizzati</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #34495e;
+      padding: 40px;
+      max-width: 500px;
+      margin: 40px auto;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2980b9;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+
+    ul, ol {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    /* Personalizzo il bullet dell'ul */
+    ul {
+      list-style-type: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2c3e50;
+    }
+
+    ul li::before {
+      content: "■"; /* quadratino pieno */
+      position: absolute;
+      left: 0;
+      top: 3px;
+      color: #3498db;
+      font-size: 1.2rem;
+    }
+
+    /* Stile per ol con numeri romani (I, II, III, ...) */
+    ol {
+      list-style-type: upper-roman;
+      counter-reset: item;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2c3e50;
+    }
+
+    ol li {
+      margin-bottom: 15px;
+      padding-left: 10px;
+    }
+
+    ol li:hover {
+      color: #2980b9;
+      transform: scale(1.05);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+  </style>
 </head>
 <body>
-    <ul type="square">
-        <li> numero 1</li>
-        <li> numero 2</li>
-        <li> numero 3</li>
-    </ul>
-    <ol type="I">
-        <li> numero 1</li>
-        <li> numero 2</li>
-        <li> numero 3</li>
-    </ol>
+  <h1>Elenchi Stilizzati</h1>
+
+  <ul>
+    <li>numero 1</li>
+    <li>numero 2</li>
+    <li>numero 3</li>
+  </ul>
+
+  <ol type="I">
+    <li>numero 1</li>
+    <li>numero 2</li>
+    <li>numero 3</li>
+  </ol>
 </body>
 </html>
