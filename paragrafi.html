@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paragrafi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paragrafi Stylizzati</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0055a4, #00aaff);
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    p {
+      background: rgba(0, 0, 0, 0.25);
+      margin: 15px 0;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      cursor: default;
+    }
+
+    p:hover {
+      background: rgba(0, 0, 0, 0.45);
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+    }
+  </style>
 </head>
 <body>
-    <p>forza inter</p>
-    <p>inter è migliore del milan</p>
-    <p>inter è migliore della juve</p>
-    <p>inter è migliore del napoli</p>
-    <p>inter è migliore del barcellona</p>
+  <p>forza inter</p>
+  <p>inter è migliore del milan</p>
+  <p>inter è migliore della juve</p>
+  <p>inter è migliore del napoli</p>
+  <p>inter è migliore del barcellona</p>
 </body>
 </html>
